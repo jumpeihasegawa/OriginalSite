@@ -10,6 +10,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     ArrayList<MSNBeans> mbArr = (ArrayList<MSNBeans>) session.getAttribute("newsArr");
+    int y = 0;
+    int m = 0;
 %>
 <!DOCTYPE html>
 <html>
@@ -69,11 +71,20 @@
 
     </head>
     <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $('.bs-component [data-toggle="popover"]').popover();
+            $('.bs-component [data-toggle="tooltip"]').tooltip();
+        </script>
+
         <header>
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a href="/OriginalSite/bootstrap/umi/top.jsp" class="navbar-brand">News巻物</a>
+                        <a href="top.jsp" class="navbar-brand">News巻物</a>
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -82,16 +93,20 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar-main">
                         <ul class="nav navbar-nav">
-                            <li><a href="/OriginalSite/bootstrap/umi/top.jsp">Top</a></li>
-                            <li><a href="//github.com/NKMR6194/Umi/releases">Login</a></li>
+                            <li><a href="top.jsp">Top</a></li>
                         </ul>
+                        <form class="navbar-form navbar-left" action="Login" method="POST" onsubmit="<%%>;return false">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="UserName">
+                                <input type="text" class="form-control" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </form>
                     </div>
                 </div>
-            </div>
         </header>
 
         <div class="container">
-
             <div class="page-header" >
                 <h1><%=Helper.getInstance().genre(mbArr.get(0).getGenre())%></h1>
             </div>
@@ -100,7 +115,7 @@
         <%for (int i = 0; i < mbArr.size(); i++) {%>
         <div class="container" >
             <div class="row" >
-                <div class="col-lg-9">
+                <div class="col-lg-8">
                     <div class="bs-component">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -112,15 +127,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="col-xs-6">
-                        <%for (int n = 0; n < mbArr.get(i).getDataSrcArr().size(); n++) {%>
-                        <img alt="" class="img-rounded" src="<%=mbArr.get(i).getImage(n)%>">
-                        <% }%>
+                <div class="col-lg-4">
+                    <%for (int n = 0; n < mbArr.get(i).getDataSrcArr().size(); n++) {%>
+                    <div class="col-lg-6">
+                        <img alt="" class="img-rounded img-responsive" src="<%=mbArr.get(i).getImage(n)%>">
                     </div>
+                    <% }%>
                 </div>
-            </div> 
-        </div>                       
+            </div>    
+        </div>
+        <% }%>
+
     </body>
 </html>
-

@@ -71,7 +71,6 @@ public class Genre extends HttpServlet {
                 //out.print(urlSeach.getTitel());
                 //imgタグを取得
                 urlSeach.imgTagEles();
-                //urlSeach.imgTagArr();
                 //画像のURLを取得
                 urlSeach.dataSrcArr();
                 //本文を取得

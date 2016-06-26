@@ -68,11 +68,20 @@
 
     </head>
     <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $('.bs-component [data-toggle="popover"]').popover();
+            $('.bs-component [data-toggle="tooltip"]').tooltip();
+        </script>
+
         <header>
             <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <a href="/OriginalSite/bootstrap/umi/top.jsp" class="navbar-brand">News巻物</a>
+                        <a href="top.jsp" class="navbar-brand">News巻物</a>
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -81,14 +90,20 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar-main">
                         <ul class="nav navbar-nav">
-                            <li><a href="/OriginalSite/bootstrap/umi/top.jsp">Top</a></li>
-                            <li><a href="//github.com/NKMR6194/Umi/releases">Login</a></li>
+                            <li><a href="top.jsp">Top</a></li>
                         </ul>
+                        <form class="navbar-form navbar-left" action="Login" method="POST" onsubmit="<%%>;
+                return false">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="UserName">
+                                <input type="text" class="form-control" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </form>
                     </div>
                 </div>
-            </div>
         </header>
-        
+
         <div class="page-header">
             <div class="container">        
                 <div class="row">

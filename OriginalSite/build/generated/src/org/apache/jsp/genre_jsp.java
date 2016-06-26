@@ -127,6 +127,7 @@ public final class genre_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <ul class=\"nav navbar-nav\">\n");
       out.write("                            <li><a href=\"/OriginalSite/bootstrap/umi/top.jsp\">Top</a></li>\n");
       out.write("                            <li><a href=\"//github.com/NKMR6194/Umi/releases\">Login</a></li>\n");
+      out.write("                            <li><a href=\"#test\">test</a></li>\n");
       out.write("                        </ul>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
@@ -142,11 +143,14 @@ public final class genre_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("\n");
+      out.write("            \n");
+      out.write("            \n");
       out.write("        ");
 for (int i = 0; i < mbArr.size(); i++) {
       out.write("\n");
       out.write("        <div class=\"container\" >\n");
       out.write("            <div class=\"row\" >\n");
+      out.write("                <a name=\"test\">test</a>\n");
       out.write("                <div class=\"col-lg-9\">\n");
       out.write("                    <div class=\"bs-component\">\n");
       out.write("                        <div class=\"panel panel-primary\">\n");
@@ -165,45 +169,24 @@ for (int i = 0; i < mbArr.size(); i++) {
       out.write("                </div>\n");
       out.write("                <div class=\"col-lg-3\">\n");
       out.write("                    ");
-//for(int n = 0;n < mbArr.get(i).getDataSrcArr(0).size();n++){
+for (int n = 0; n < mbArr.get(i).getDataSrcArr().size(); n++) {
       out.write("\n");
-      out.write("                    ");
-      out.print(mbArr.get(i).getDataSrcArr());
-      out.write("\n");
-      out.write("                    <img alt=\"\" class=\"\" src=\"");
-//=mbArr.get(i).getImage(0)
+      out.write("                    <div class=\"col-md-6\">\n");
+      out.write("                        <img alt=\"\" class=\"img-rounded img-responsive\" src=\"");
+      out.print(mbArr.get(i).getImage(n));
       out.write("\">\n");
+      out.write("                    </div>\n");
       out.write("                    ");
-// } 
+ }
       out.write("\n");
       out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>                       \n");
+      out.write("            </div>    \n");
+      out.write("        </div>\n");
       out.write("        ");
- } 
-      out.write("\n");
-      out.write("\n");
-      out.write("        ");
-//for (int i = 0; i < mbArr.size(); i++) {
-      out.write("\n");
-      out.write("        ");
-//=mbArr.get(i).getTitel()
-      out.write("\n");
-      out.write("        ");
-//=mbArr.get(i).getText()
-      out.write("\n");
-      out.write("        ");
-//mbArr.get(i).DataSrcArr(0);
-      out.write("\n");
-      out.write("        ");
-//=mbArr.get(i).getImage(0)
-      out.write("\n");
-      out.write("        ");
-// }
+ }
       out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
-      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

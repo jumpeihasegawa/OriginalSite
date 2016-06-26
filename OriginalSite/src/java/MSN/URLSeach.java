@@ -177,8 +177,8 @@ public class URLSeach {
         }
         //本文の中にインライン要素で画像があったときに削除する
         for (int i = 0; i < this.text.size(); i++) {
-            if (!this.text.get(i).getElementsByTag("span").isEmpty()) {
-                this.text.get(i).getElementsByTag("span").remove();
+            if (!this.text.get(i).getElementsByClass("storyimage").isEmpty()) {
+                this.text.get(i).getElementsByClass("storyimage").remove();
             }
         }
     }
